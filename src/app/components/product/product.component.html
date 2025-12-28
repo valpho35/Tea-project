@@ -1,0 +1,47 @@
+<div class="container py-5">
+  <button class="btn btn-outline-primary mb-4" (click)="backToCatalog()">
+    <i class="bi bi-arrow-left me-2"></i>Вернуться в каталог
+  </button>
+
+  <div *ngIf="product" class="card border-0 shadow-lg">
+    <div class="row g-0">
+
+      <div class="col-md-6">
+        <div class="p-4 h-100 d-flex align-items-center justify-content-center">
+          <img [src]="product.image" 
+               [alt]="product.title" 
+               class="img-fluid rounded product-image"
+               onerror="this.src='assets/images/placeholder.jpg'">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="p-4 h-100 d-flex flex-column">
+
+          <div class="mb-3">
+            <h1 class="text-primary">{{ product.title }}</h1>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="display-6 text-success fw-bold">
+                {{ formatPrice(product.price) }}
+              </span>
+              <span class="badge bg-info fs-6">{{ product.category }}</span>
+            </div>
+          </div>
+
+          <div class="mb-4 flex-grow-1">
+            <h5 class="text-primary mb-2">Описание</h5>
+            <p class="card-text">{{ product.description }}</p>
+          </div>
+
+          <div class="border-top pt-4">
+            <button class="btn btn-primary btn-lg w-100 py-3" 
+                    (click)="buyProduct()">
+              Купить
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

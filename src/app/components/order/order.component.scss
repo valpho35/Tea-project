@@ -1,0 +1,38 @@
+.form-label {
+  font-weight: 600;
+  color: #076BFF;
+  margin-bottom: 0.5rem;
+}
+
+.btn-primary {
+  background-color: #076BFF;
+  border-color: #076BFF;
+  transition: all 0.3s ease;
+  
+  &:hover:not(:disabled) {
+    background-color: #0654cc;
+    border-color: #0654cc;
+    transform: translateY(-2px);
+  }
+  
+  &:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+}
+
+.alert-success {
+  border-color: #d1e7dd;
+  background-color: #d1e7dd;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem;
+  }
+}
